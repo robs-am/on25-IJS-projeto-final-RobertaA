@@ -26,6 +26,9 @@ class GroupGarden {
       console.log("The new leader must be a member of the group!");
     }
   }
+  getMembersNames() {
+    return this.members.map((member) => member.name);
+  }
 }
 
 module.exports = GroupGarden;

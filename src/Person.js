@@ -14,7 +14,12 @@ class Person {
     }
     group.addMember(this);
     this.group = group;
-    return `${this.nome} foi inscrita com sucesso em ${this.group}`;
+
+    // Imprimir os nomes dos membros após se inscrever no novo grupo
+    console.log(
+      `Membros do grupo ${group.neighborhoodName}:`,
+      group.getMembersNames().join(", ")
+    );
   }
 
   leaveGroup() {

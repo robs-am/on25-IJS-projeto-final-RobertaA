@@ -1,14 +1,16 @@
-import { Pessoa } from "./Pessoa.js";
-import { GrupoHorta } from "./GrupoHorta.js";
-import { Plantacao } from "./Plantacao.js";
+const Person = require("./Person");
+const GroupGarden = require("./GroupGarden");
+const Planting = require("./Planting");
 
-const lider1 = new Pessoa("Roberta", "Méier", "email1@gmail.com");
+const lider1 = new Person("Roberta", "Méier", "email1@gmail.com");
 console.log(lider1);
-const lider2 = new Pessoa("Laíssa", "Campo Grande", "email2@gmail.com");
+const lider2 = new Person("Laíssa", "Campo Grande", "email2@gmail.com");
 console.log(lider2);
-const lider3 = new Pessoa("Raquel", "Cascadura", "email3@gmail.com");
+const lider3 = new Person("Raquel", "Cascadura", "email3@gmail.com");
 console.log(lider3);
 
-const GrupoHortaMeier = new GrupoHorta("Méier", "Roberta");
-const GrupoHortaCG = new GrupoHorta("Campo Grande", "Laíssa");
-const GrupoHortaCascadura = new GrupoHorta("Cascadura", "Raquel");
+const GroupGardenMeier = new GroupGarden("Méier", "Roberta");
+const GroupGardenCG = new GroupGarden("Campo Grande", "Laíssa");
+const GroupGardenCascadura = new GroupGarden("Cascadura", "Raquel");
+
+console.log(GroupGardenMeier);

@@ -1,3 +1,5 @@
+import { Pessoa } from "./Pessoa.js";
+
 export class GrupoHorta {
   constructor(nomeDoBairro, lider) {
     this.nomeDoBairro = nomeDoBairro;

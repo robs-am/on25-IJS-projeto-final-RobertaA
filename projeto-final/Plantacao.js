@@ -1,4 +1,4 @@
-class Plantacao {
+export class Plantacao {
   constructor(tipoDePlanta, quantidade) {
     this.tipoDePlanta = tipoDePlanta;
     this.quantidade = quantidade;

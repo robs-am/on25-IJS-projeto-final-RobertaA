@@ -1,4 +1,6 @@
-class Pessoa {
+import { Pessoa } from "./Pessoa.js";
+
+export class Pessoa {
   nome;
   bairro;
   email;
@@ -15,6 +17,7 @@ class Pessoa {
     }
     grupo.adicionarMembro(this);
     this.grupo = grupo;
+    return `Usuário ${this.nome} adicionado ao grupo`;
   }
 
   deixarGrupo() {
@@ -24,3 +27,12 @@ class Pessoa {
     }
   }
 }
+
+const usuario1 = new Pessoa("Roberta", "Méier", "email1@gmail.com");
+console.log(usuario1);
+const usuario2 = new Pessoa("Laíssa", "Campo Grande", "email2@gmail.com");
+console.log(usuario2);
+const usuario3 = new Pessoa("Raquel", "Cascadura", "email3@gmail.com");
+console.log(usuario3);
+
+usuario3.inscreverEmGrupo(grupo);

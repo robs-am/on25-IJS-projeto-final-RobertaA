@@ -1,4 +1,4 @@
-class GrupoHorta {
+export class GrupoHorta {
   constructor(nomeDoBairro, lider) {
     this.nomeDoBairro = nomeDoBairro;
     this.lider = lider;

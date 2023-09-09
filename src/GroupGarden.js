@@ -29,8 +29,3 @@ class GroupGarden {
 }
 
 module.exports = GroupGarden;
-
-const lider1 = new Person("Roberta", "Méier", "email1@gmail.com");
-console.log(lider1);
-const GroupGardenMeier = new GroupGarden("Méier", "Roberta");
-console.log(GroupGardenMeier);

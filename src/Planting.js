@@ -1,7 +1,10 @@
+const Person = require("./Person");
+const GroupGarden = require("./GroupGarden");
 class Planting {
-  constructor(plantType, quantity) {
+  constructor(plantType, quantity, planter) {
     this.plantType = plantType;
     this.quantity = quantity;
+    this.planter = planter;
     this.plantingDate = new Date();
   }
 
@@ -29,10 +32,4 @@ class Planting {
 
 module.exports = Planting;
 
-const tomatoPlanting = new Planting("Tomate", 10);
 const carrotPlanting = new Planting("Cenoura", 15);
-
-tomatoPlanting.updateQuantity(30);
-//tomates plantados a 5 dias atras
-
-console.log(tomatoPlanting);

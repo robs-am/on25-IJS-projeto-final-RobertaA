@@ -1,5 +1,3 @@
-const GroupGarden = require("./GroupGarden");
-
 class Person {
   constructor(name, neighborhood, email) {
     this.name = name;
@@ -15,7 +13,6 @@ class Person {
     group.addMember(this);
     this.group = group;
 
-    // Imprimir os nomes dos membros após se inscrever no novo grupo
     console.log(
       `Membros do grupo ${group.neighborhoodName}:`,
       group.getMembersNames().join(", ")
@@ -29,11 +26,13 @@ class Person {
     }
   }
 }
+console.log("person.js loaded and Person class is defined");
+
 module.exports = Person;
 
 const roberta = new Person("Roberta", "Méier", "email1@gmail.com");
-console.log(roberta);
+// console.log(roberta);
 const laissa = new Person("Laíssa", "Campo Grande", "email2@gmail.com");
-console.log(laissa);
+// console.log(laissa);
 const raquel = new Person("Raquel", "Cascadura", "email3@gmail.com");
-console.log(raquel);
+// console.log(raquel);

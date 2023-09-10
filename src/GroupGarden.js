@@ -1,4 +1,5 @@
 const Person = require("./Person");
+const Planting = require("./Planting");
 
 class GroupGarden {
   constructor(neighborhoodName, admin) {
@@ -6,6 +7,11 @@ class GroupGarden {
     this.admin = admin;
     this.members = [admin];
     this.plantings = [];
+  }
+  addPlanting(plantType, quantity, planter) {
+    const newPlanting = new Planting(plantType, quantity, planter);
+    //ele cria uma nova instancia da classe Planting dentro do método da classe groupgarden
+    this.plantings.push(newPlanting);
   }
 
   addMember(person) {

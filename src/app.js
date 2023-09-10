@@ -14,7 +14,7 @@ const raquel = new Person("Raquel", "Cascadura", "email3@gmail.com");
 
 const alice = new Person("Alice", "Méier", "email4@gmail.com");
 const tania = new Person("Tânia", "Campo Grande", "email5@gmail.com");
-
+const andre = new Person("Andre", "Meier", "email6@gmail.com");
 //criação de grupos de hortas por bairros
 
 const GroupGardenMeier = new GroupGarden("Méier", "Roberta");
@@ -23,22 +23,33 @@ const GroupGardenCG = new GroupGarden("Campo Grande", "Laíssa");
 const GroupGardenCascadura = new GroupGarden("Cascadura", "Raquel");
 
 //adiciona membros de hortas para cada grupo de bairro
-roberta.enrollInGroup(GroupGardenMeier);
-console.log(roberta);
-alice.enrollInGroup(GroupGardenMeier);
-console.log(alice);
-
-laissa.enrollInGroup(GroupGardenCG);
-console.log(laissa);
 tania.enrollInGroup(GroupGardenCG);
-console.log(tania);
-
+alice.enrollInGroup(GroupGardenMeier);
+roberta.enrollInGroup(GroupGardenMeier);
+andre.enrollInGroup(GroupGardenMeier);
+laissa.enrollInGroup(GroupGardenCG);
 raquel.enrollInGroup(GroupGardenCascadura);
-console.log(raquel);
 
-console.log(GroupGardenMeier);
+//mudar admin
+GroupGardenCG.changeAdmin(tania);
 console.log(GroupGardenCG);
 
+//Méier
+
+//console.log(roberta);
+
+//console.log(alice);
+
+//Campo Grande
+
+//console.log(laissa);
+
+//console.log(tania);
+
+//Cascadura
+
+//console.log(raquel);
+
+//console.log(GroupGardenCG);
+
 //remove membros de hortas para cada grupo de bairro
-alice.leaveGroup(GroupGardenMeier);
-console.log(GroupGardenMeier);

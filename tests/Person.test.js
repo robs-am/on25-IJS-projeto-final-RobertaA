@@ -16,15 +16,15 @@ describe("Person Class", () => {
 
     expect(roberta.group).toBe(gardenGroupMeier);
   });
-});
 
-it("should remove a person from a group", () => {
-  const alice = new Person("Alice", "Méier", "email4@gmail.com");
-  const gardenGroupMeier = new GroupGarden("Meier", alice);
+  it("should remove a person from a group", () => {
+    const alice = new Person("Alice", "Méier", "email4@gmail.com");
+    const gardenGroupMeier = new GroupGarden("Meier", alice);
 
-  alice.enrollInGroup(gardenGroupMeier);
-  expect(alice.group).toBe(gardenGroupMeier);
+    alice.enrollInGroup(gardenGroupMeier);
+    expect(alice.group).toBe(gardenGroupMeier);
 
-  alice.leaveGroup();
-  expect(alice.group).toBe(null);
+    alice.leaveGroup();
+    expect(alice.group).toBe(null);
+  });
 });

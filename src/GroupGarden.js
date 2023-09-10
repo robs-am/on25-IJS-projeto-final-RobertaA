@@ -1,10 +1,10 @@
 const Person = require("./Person");
 
 class GroupGarden {
-  constructor(neighborhoodName, leader) {
+  constructor(neighborhoodName, admin) {
     this.neighborhoodName = neighborhoodName;
-    this.leader = leader;
-    this.members = [leader];
+    this.admin = admin;
+    this.members = [admin];
     this.plantings = [];
   }
 
@@ -19,11 +19,11 @@ class GroupGarden {
     }
   }
 
-  changeLeader(newLeader) {
-    if (this.members.includes(newLeader)) {
-      this.leader = newLeader;
+  changeAdmin(newadmin) {
+    if (this.members.includes(newadmin)) {
+      this.admin = newadmin;
     } else {
-      console.log("The new leader must be a member of the group.");
+      console.log("The new admin must be a member of the group.");
     }
   }
   getMembersNames() {

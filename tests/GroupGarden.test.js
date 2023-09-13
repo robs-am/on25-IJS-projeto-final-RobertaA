@@ -1,13 +1,7 @@
 const GroupGarden = require("../src/GroupGarden");
 const Planting = require("../src/Planting");
 
-/* class Planting {
-  constructor(plantType, quantity, planter) {
-    this.plantType = plantType;
-    this.quantity = quantity;
-    this.planter = planter;
-  }
-} */
+
 
 // Start of the tests
 describe("GroupGarden Class", () => {

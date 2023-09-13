@@ -1,26 +1,57 @@
-const Person = require("../src/Person");
 const GroupGarden = require("../src/GroupGarden");
+const Planting = require("../src/Planting");
 
-describe("Group Class", () => {
-  let laissa, tania, group;
+/* class Planting {
+  constructor(plantType, quantity, planter) {
+    this.plantType = plantType;
+    this.quantity = quantity;
+    this.planter = planter;
+  }
+} */
+
+// Start of the tests
+describe("GroupGarden Class", () => {
+  let garden;
+  const roberta = { name: "Roberta" };
+  const andre = { name: "André" };
 
   beforeEach(() => {
-    laissa = new Person("Laíssa", "Campo Grande", "email2@gmail.com");
-    tania = new Person("Tânia", "Campo Grande", "email5@gmail.com");
-    group = new GroupGarden("Campo Grande", laissa);
+    garden = new GroupGarden("Meier", roberta);
   });
 
-  it("should initialize group with admin as first member", () => {
-    expect(group.members[0]).toBe(laissa);
+  test("should initialize with the given neighborhood name and admin", () => {
+    expect(garden.neighborhoodName).toBe("Meier");
+    expect(garden.admin).toBe(roberta);
+    expect(garden.members).toEqual([roberta]);
   });
 
-  it("should add member to group", () => {
-    tania.enrollInGroup(group);
-    expect(group.members).toContain(tania);
+  test("should add a planting", () => {
+    garden.addPlanting("Rúcula", 5, roberta);
+    expect(garden.plantings[0]).toBeInstanceOf(Planting);
+    expect(garden.plantings[0].plantType).toBe("Rúcula");
+    expect(garden.plantings[0].quantity).toBe(5);
+    expect(garden.plantings[0].planter).toBe(roberta);
   });
-  it("should remove member from group", () => {
-    tania.enrollInGroup(group);
-    tania.leaveGroup();
-    expect(group.members).not.toContain(tania);
+
+  test("should add and remove members", () => {
+    garden.addMember(andre);
+    expect(garden.members.includes(andre)).toBe(true);
+
+    garden.removeMember(andre);
+    expect(garden.members.includes(andre)).toBe(false);
+  });
+
+  test("should change admin only if the new admin is a member", () => {
+    garden.changeAdmin(andre);
+    expect(garden.admin).toBe(roberta);
+
+    garden.addMember(andre);
+    garden.changeAdmin(andre);
+    expect(garden.admin).toBe(andre);
+  });
+
+  test("should get the names of the members", () => {
+    garden.addMember(andre);
+    expect(garden.getMembersNames()).toEqual(["Roberta", "André"]);
   });
 });

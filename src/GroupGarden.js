@@ -1,4 +1,3 @@
-const Person = require("./Person");
 const Planting = require("./Planting");
 
 class GroupGarden {
